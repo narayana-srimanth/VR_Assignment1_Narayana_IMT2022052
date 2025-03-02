@@ -32,6 +32,10 @@ kp2, desc2 = sift_detector.detectAndCompute(gray_img2, None)
 keypoint_img1 = cv2.drawKeypoints(image_1, kp1, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 keypoint_img2 = cv2.drawKeypoints(image_2, kp2, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 
+# Save keypoints visualization
+cv2.imwrite(os.path.join(output_folder, "keypoints_image1.jpeg"), cv2.cvtColor(keypoint_img1, cv2.COLOR_RGB2BGR))
+cv2.imwrite(os.path.join(output_folder, "keypoints_image2.jpeg"), cv2.cvtColor(keypoint_img2, cv2.COLOR_RGB2BGR))
+
 # Show keypoints detected
 plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1)
@@ -41,6 +45,7 @@ plt.imshow(keypoint_img1)
 plt.subplot(1, 2, 2)
 plt.title("Keypoints in Image 2")
 plt.imshow(keypoint_img2)
+plt.show()
 
 # Feature matching using BFMatcher
 matcher = cv2.BFMatcher(cv2.NORM_L2, crossCheck=True)
@@ -52,9 +57,13 @@ matches_sorted = sorted(matches_found, key=lambda m: m.distance)
 # Visualize the best 10 matches
 match_viz = cv2.drawMatches(image_1, kp1, image_2, kp2, matches_sorted[:10], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
 
+# Save match visualization
+cv2.imwrite(os.path.join(output_folder, "image_matches.jpeg"), cv2.cvtColor(match_viz, cv2.COLOR_RGB2BGR))
+
 plt.figure(figsize=(12, 6))
 plt.imshow(match_viz)
 plt.title("Top 10 Matches")
+plt.show()
 
 # Select the best 50 matches for homography calculation
 best_matches = matches_sorted[:50]
@@ -98,9 +107,3 @@ plt.figure(figsize=(12, 6))
 plt.imshow(final_panorama)
 plt.title("Final Stitched Panorama")
 plt.show()
-
-#IMT2022052
-#Narayana
-
-
-
