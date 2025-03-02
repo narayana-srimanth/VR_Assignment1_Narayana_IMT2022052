@@ -92,7 +92,7 @@ python stitching.py
   ![Panorama](output_images/keypoints_image1.jpeg)
   ![Panorama](output_images/keypoints_image2.jpeg)
   ***Image Matches***  
-  ![detected_coins](output_images/image_Matches.jpeg)
+  ![detected_coins](output_images/image_matches.jpeg)
   ***Final Panorama***
   ![detected_coins](output_images/stitched_output.jpeg)
   
