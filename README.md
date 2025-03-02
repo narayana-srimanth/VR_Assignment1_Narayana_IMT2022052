@@ -76,24 +76,25 @@ python stitching.py
 - `bf.match()` – Finds the best matches between feature descriptors.
 - `cv2.drawMatches()` – Draws lines connecting matching keypoints.
 - `cv2.findHomography()` – Computes the homography matrix for image transformation.
+- `cv2.warpPerspective()` – Warps the first image based on the homography matrix.
 - `crop_black_region()` – Crops black regions after warping.
-
 ---
 
 ## Output
 
 - **Part 1**: Detected coins with segmentation and total count displayed.  
 ***Detected Coins***
-  ![detected_coins](output_images/detected_coins.png)  
+  ![detected_coins](output_images/detected_coins.jpeg)  
 ***Segmented Coins***  
-  ![detected_coins](output_images/segmented_coins.png)  
+  ![detected_coins](output_images/segmented_coins.jpeg)  
 - **Part 2**: Final stitched panorama from the input images.  
   ***Detected KeyPoints***  
-  ![detected_coins](output_images/Keypoints.png)
+  ![Panorama](output_images/keypoints_image1.jpeg)
+  ![Panorama](output_images/keypoints_image2.jpeg)
   ***Image Matches***  
-  ![detected_coins](output_images/Image_Matches.png)
+  ![detected_coins](output_images/image_Matches.jpeg)
   ***Final Panorama***
-  ![detected_coins](output_images/Final_Panorama.png)
+  ![detected_coins](output_images/stitched_output.jpeg)
   
 
 ---
